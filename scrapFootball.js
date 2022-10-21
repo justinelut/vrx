@@ -8,7 +8,11 @@ export default async function scrapFootball(
   articlebody,
   articleimage
 ) {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: "/usr/bin/chromium-browser",
+    args: ["--no-sandbox"],
+  });
   const page = await browser.newPage();
   await page.goto(url, {
     waitUntil: "load",
@@ -63,19 +67,19 @@ export default async function scrapFootball(
 
     const tags = [
       {
-          "created_at": null,
-          "description": null,
-          "feature_image": null,
-          "id": "5ddc9063c35e7700383b27e0",
-          "meta_description": null,
-          "meta_title": null,
-          "name": "Football",
-          "slug": "football",
-          "updated_at": null,
-          "url": "https://verixr.com/tag/football/",
-          "visibility": "public"
-      }
-  ]
+        created_at: null,
+        description: null,
+        feature_image: null,
+        id: "5ddc9063c35e7700383b27e0",
+        meta_description: null,
+        meta_title: null,
+        name: "Football",
+        slug: "football",
+        updated_at: null,
+        url: "https://verixr.com/tag/football/",
+        visibility: "public",
+      },
+    ];
 
     const status = "draft";
     postToGhost(
