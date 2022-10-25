@@ -80,7 +80,7 @@ export default async function ScrapData(
       },
     ];
 
-    const status = "published";
+    const status = "draft";
     const publishBody = fullArticleBody[0];
     postToGhost(
       fullArticleImage[0],

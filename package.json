@@ -6,7 +6,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon autoshare.js"
   },
   "dependencies": {
     "@tryghost/admin-api": "^1.13.1",

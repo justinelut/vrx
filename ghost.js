@@ -20,4 +20,5 @@ const postToGhost = (featuredImage, title, html, status, tags) => {
   );
 };
 
+
 export default postToGhost;

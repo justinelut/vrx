@@ -34,8 +34,8 @@ export default async function scrapFootball(
   }, resultsSelector);
 
   if ((links !== null) | undefined) {
-    const l = Math.floor(Math.random() * (4 - 1) + 1);
-    await page.goto(links[l], {
+    const l = Math.floor(Math.random() * (20 - 1) + 1);
+    await page.goto(links[0], {
       waitUntil: "load",
       // Remove the timeout
       timeout: 0,
@@ -57,7 +57,7 @@ export default async function scrapFootball(
       });
     }, articleBody);
 
-    //   // // Full article image
+    // //   // // Full article image
     const fullArticleImage = await page.evaluate((articleImage) => {
       return [...document.querySelectorAll(articleImage)].map((anchor) => {
         const image = anchor.getAttribute("src");
@@ -91,6 +91,5 @@ export default async function scrapFootball(
     );
     console.log(fullArticleTitle + " has been published");
 
-    console.log(fullArticleImage);
   }
 }
