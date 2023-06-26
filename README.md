@@ -1,4 +1,4 @@
-Sure! Here's a small documentation for your Twitter bot made with Node.js and Puppeteer:
+
 
 ## Twitter Bot Documentation
 
